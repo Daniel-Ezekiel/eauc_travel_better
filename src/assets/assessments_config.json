@@ -38,12 +38,7 @@
             "questions": [
                 {
                     "id": "2.1",
-                    "text": "I am an early-career academic/researcher",
-                    "scores": {
-                        "disagree": 0,
-                        "neutral": 1,
-                        "agree": 4
-                    }
+                    "text": "I am an early-career academic/researcher"
                 },
                 {
                     "id": "2.2",
@@ -86,12 +81,7 @@
             "questions": [
                 {
                     "id": "3.1",
-                    "text": "I am an early-career academic/researcher",
-                    "scores": {
-                        "disagree": 0,
-                        "neutral": 1,
-                        "agree": 4
-                    }
+                    "text": "I am an early-career academic/researcher"
                 },
                 {
                     "id": "3.2",
@@ -130,12 +120,7 @@
             "questions": [
                 {
                     "id": "4.1",
-                    "text": "I am an early-career academic/researcher",
-                    "scores": {
-                        "disagree": 0,
-                        "neutral": 1,
-                        "agree": 4
-                    }
+                    "text": "I am an early-career academic/researcher"
                 },
                 {
                     "id": "4.2",
@@ -182,21 +167,11 @@
                 },
                 {
                     "id": "5.2",
-                    "text": "I risk losing my grant/funding if I do not attend this particular event/conference",
-                    "scores": {
-                        "disagree": 0,
-                        "neutral": 1,
-                        "agree": 4
-                    }
+                    "text": "I risk losing my grant/funding if I do not attend this particular event/conference"
                 },
                 {
                     "id": "5.3",
-                    "text": "I rely strongly on this particular grant",
-                    "scores": {
-                        "disagree": 0,
-                        "neutral": 1,
-                        "agree": 4
-                    }
+                    "text": "I rely strongly on this particular grant"
                 },
                 {
                     "id": "5.4",

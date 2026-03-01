@@ -6,7 +6,9 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <div className="grid gap-5">
         <Header />
-        {children}
+        <main>
+          {children}
+        </main>
         <Footer />
       </div>
     </>
