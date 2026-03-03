@@ -6,8 +6,6 @@ export const Header = () => {
 
   const isHome = pathname === "/";
 
-  console.log(pathname, isHome);
-
   return (
     <header>
       <nav className="flex justify-between">

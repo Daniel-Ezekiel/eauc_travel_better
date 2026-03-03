@@ -1,195 +1,349 @@
 {
-    "data": [
+  "data": [
+    {
+      "id": "individual_context",
+      "title": "Assessment 1: Individual Context",
+      "description": "Evaluate your personal beliefs, skills, and the specific research related to this event to determine the importance of your attendance.",
+      "questions": [
         {
-            "id": "individual_context",
-            "title": "Assessment 1: Individual Context",
-            "description": "Evaluate your personal beliefs, skills, and the specific research related to this event to determine the importance of your attendance.",
-            "questions": [
-                {
-                    "id": "1.1",
-                    "text": "I believe social media is a useful tool for disseminating ideas and/or research"
-                },
-                {
-                    "id": "1.2",
-                    "text": "I possess skills to disseminate these specific ideas and/or research through social media or other online or more local platforms"
-                },
-                {
-                    "id": "1.3",
-                    "text": "I possess skills to promote these specific ideas and/or research through social media or other online or more local platforms"
-                },
-                {
-                    "id": "1.4",
-                    "text": "I possess skills to learn about specific ideas and/or research that will be discussed at the conference through social media or other online or more local platforms"
-                },
-                {
-                    "id": "1.5",
-                    "text": "I possess skills to coordinate, collaborate and network with academics/researchers on these specific ideas and/or research through social media or other online or more local platforms"
-                },
-                {
-                    "id": "1.6",
-                    "text": "It would be helpful to use the time spent travelling and attending the conference to instead conduct research/continue work, which may improve my findings and its impact on my career"
-                }
-            ]
+          "id": "1.1",
+          "text": "I believe social media is a useful tool for disseminating ideas and/or research",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
         },
         {
-            "id": "social_context_networking",
-            "title": "Assessment 2: Social Context (Networking)",
-            "description": "Assess how networking at this specific conference impacts your professional networks, identity, and institutional relationships.",
-            "questions": [
-                {
-                    "id": "2.1",
-                    "text": "I am an early-career academic/researcher"
-                },
-                {
-                    "id": "2.2",
-                    "text": "At the conference, I will meet academics/researchers I have not met before"
-                },
-                {
-                    "id": "2.3",
-                    "text": "At the conference, I will meet academics/researchers I have not met in person in over 1 year"
-                },
-                {
-                    "id": "2.4",
-                    "text": "At the conference, I will meet academics/researchers with whom I cannot connect virtually"
-                },
-                {
-                    "id": "2.5",
-                    "text": "At the conference, I will meet academics/researchers I cannot meet locally"
-                },
-                {
-                    "id": "2.6",
-                    "text": "I will get an appropriate opportunity to chat with these particular academics/researchers (eg. enough time, one on one interactions, comfortable environment etc.)"
-                },
-                {
-                    "id": "2.7",
-                    "text": "I am the only academic representing my department/research team at the conference"
-                },
-                {
-                    "id": "2.8",
-                    "text": "I cannot ask early-career academics/researchers to attend this conference in my place to provide them with new opportunities (disagree if you are an early-career academic)"
-                },
-                {
-                    "id": "2.9",
-                    "text": "If I do not attend this conference in order to avoid flying, my actions may encourage others to avoid flying as well"
-                }
-            ]
+          "id": "1.2",
+          "text": "I possess skills to disseminate these specific ideas and/or research through social media or other online or more local platforms",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
         },
         {
-            "id": "social_context_learning",
-            "title": "Assessment 3: Social Context (Learning)",
-            "description": "Assess how the learning opportunities at this event impact your professional development, identity, and level of influence.",
-            "questions": [
-                {
-                    "id": "3.1",
-                    "text": "I am an early-career academic/researcher"
-                },
-                {
-                    "id": "3.2",
-                    "text": "At the conference, I will learn about ideas that I have not been exposed to before"
-                },
-                {
-                    "id": "3.3",
-                    "text": "There will be an appropriate platform for me to learn (consider how best you learn and what is most comfortable for you)"
-                },
-                {
-                    "id": "3.4",
-                    "text": "These ideas are relevant and important to my current research/work"
-                },
-                {
-                    "id": "3.5",
-                    "text": "At the conference, I will learn from a researcher/academic who I cannot learn from virtually or locally at another conference"
-                },
-                {
-                    "id": "3.6",
-                    "text": "The conference offers technical training/certification important to my career that I cannot do virtually/locally"
-                },
-                {
-                    "id": "3.7",
-                    "text": "I am the only academic from my department/research team/project attending the conference"
-                },
-                {
-                    "id": "3.8",
-                    "text": "I cannot ask early-career academics/researchers to attend this conference in my place to provide them with new opportunities (disagree if you are an early-career academic)"
-                }
-            ]
+          "id": "1.3",
+          "text": "I possess skills to promote these specific ideas and/or research through social media or other online or more local platforms",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
         },
         {
-            "id": "social_context_presenting",
-            "title": "Assessment 4: Social Context (Presenting)",
-            "description": "Assess how presenting your work at this event impacts your professional identity, institutional relationships, and influence.",
-            "questions": [
-                {
-                    "id": "4.1",
-                    "text": "I am an early-career academic/researcher"
-                },
-                {
-                    "id": "4.2",
-                    "text": "At the conference, I will be presenting research I have not shared before"
-                },
-                {
-                    "id": "4.3",
-                    "text": "I am presenting research I cannot share locally/virtually at another conference"
-                },
-                {
-                    "id": "4.4",
-                    "text": "I am confident that my work is ready to share, or if my work is unfinished, I am confident it is ready for feedback"
-                },
-                {
-                    "id": "4.5",
-                    "text": "At the conference, I will be given an appropriate platform to share my research/ideas (eg. enough speaking time, proper technology, relevant audience)"
-                },
-                {
-                    "id": "4.6",
-                    "text": "Sharing my research through this platform will enhance my academic reputation or increase my likelihood of getting published"
-                },
-                {
-                    "id": "4.7",
-                    "text": "Attending the conference despite flying will not hinder the credibility of my research (eg. work on climate change, social justice etc.)"
-                },
-                {
-                    "id": "4.8",
-                    "text": "I cannot ask early-career academics/researchers to attend this conference in my place to provide them with new opportunities (disagree if you are an early-career academic)"
-                },
-                {
-                    "id": "4.9",
-                    "text": "I am the only academic from my department/research team attending the conference to share ideas/research"
-                }
-            ]
+          "id": "1.4",
+          "text": "I possess skills to learn about specific ideas and/or research that will be discussed at the conference through social media or other online or more local platforms",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
         },
         {
-            "id": "material_context",
-            "title": "Assessment 5: Material Context",
-            "description": "Evaluate the practical elements such as available technologies, institutional rules, and scheduling constraints, that influence your travel decision.",
-            "questions": [
-                {
-                    "id": "5.1",
-                    "text": "Attending this conference would fulfil certain grant requirements"
-                },
-                {
-                    "id": "5.2",
-                    "text": "I risk losing my grant/funding if I do not attend this particular event/conference"
-                },
-                {
-                    "id": "5.3",
-                    "text": "I rely strongly on this particular grant"
-                },
-                {
-                    "id": "5.4",
-                    "text": "There are no local or virtual events/conferences that could instead fulfil my grant requirements"
-                },
-                {
-                    "id": "5.5",
-                    "text": "Online platforms or other fora are not appropriate for disseminating my research/ideas (eg. not interactive enough, not enough traction)"
-                },
-                {
-                    "id": "5.6",
-                    "text": "This is the only non-local conference/event I can attend all year (eg. due to teaching obligations, familial obligations, lack of funding etc.)"
-                },
-                {
-                    "id": "5.7",
-                    "text": "I am able to visit friends/family, attend other conferences/professional meetings or conduct research due to the location of the conference"
-                }
-            ]
+          "id": "1.5",
+          "text": "I possess skills to coordinate, collaborate and network with academics/researchers on these specific ideas and/or research through social media or other online or more local platforms",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "1.6",
+          "text": "It would be helpful to use the time spent travelling and attending the conference to instead conduct research/continue work, which may improve my findings and its impact on my career",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
         }
-    ]
+      ],
+      "outcomes": [
+        {
+          "min_score": 0,
+          "max_score": 3,
+          "tag": "0-3",
+          "at_a_glance": "When considering your options to present research, learn, collaborate and network based on your skills and beliefs, it seems as if attending this particular conference may be important, at least until you feel more comfortable with supplementing some conferences/events with online networking and self-promotion.",
+          "in_detail": "In the future, it may be beneficial to utilise the many tools available through social media. In a survey on social media use amongst academics, over 86% of 686 respondents named Twitter the most useful social media site for academic work. In qualitative interviews from the same study, many academics stated that Twitter allows them to disseminate work to broader audiences and to connect with individuals they may not normally meet at conferences. If you are interested in utilising social media, there are online resources that may help you improve your skills. Additionally, if it would be beneficial to use the time spent travelling to and attending the conference to work on your research instead, perhaps attending another local conference may be something to consider."
+        },
+        {
+          "min_score": 4,
+          "max_score": 7,
+          "tag": "4-7",
+          "at_a_glance": "It seems as though you are caught in the middle! Although it may not be as glamorous as jet-setting across the globe, disseminating work or learning through online platforms is becoming increasingly common.",
+          "in_detail": "If you have some online skills, you may be able to join the growing number of academics who regularly use social media for professional purposes. Online features like hashtags may allow you to still connect with conference attendees and get updates on conference/event happenings. Online platforms, like blogging, may facilitate conversational scholarship, or help you to communicate research to a wider audience—perhaps having a bigger impact and allowing you to think about your work in other ways. 115] Additionally, many academics now use online platforms to improve citation referencing and change traditional dissemination of research. Some scholars state that it is easier to keep in touch through social media and other online platforms as it allows them to connect with colleagues more frequently than just seeing them at conferences. It may be useful to consider supplementing a yearly conference with online networking."
+        },
+        {
+          "min_score": 8,
+          "max_score": 12,
+          "tag": "8-12",
+          "at_a_glance": "Your skills may provide you with opportunities to collaborate, learn and promote and share your work without flying to a conference.",
+          "in_detail": "While attending some conferences is still crucial to academic progression, reflecting on and acknowledging your skills may allow you to make better decisions about participating in conferences to which you must fly, by considering alternatives or supplements to conference attendance. Utilising your social media skills can reduce the number of conferences you may need to attend. Focusing on the actual purpose of attending these events and whether these purposes can be delivered through your online skills can uncover new modes of participating in academia."
+        }
+      ]
+    },
+    {
+      "id": "social_context_networking",
+      "title": "Assessment 2: Social Context (Networking)",
+      "description": "Assess how networking at this specific conference impacts your professional networks, identity, and institutional relationships.",
+      "questions": [
+        {
+          "id": "2.1",
+          "text": "I am an early-career academic/researcher",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+        },
+        {
+          "id": "2.2",
+          "text": "At the conference, I will meet academics/researchers I have not met before",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "2.3",
+          "text": "At the conference, I will meet academics/researchers I have not met in person in over 1 year",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "2.4",
+          "text": "At the conference, I will meet academics/researchers with whom I cannot connect virtually",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "2.5",
+          "text": "At the conference, I will meet academics/researchers I cannot meet locally",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "2.6",
+          "text": "I will get an appropriate opportunity to chat with these particular academics/researchers (eg. enough time, one on one interactions, comfortable environment etc.)",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "2.7",
+          "text": "I am the only academic representing my department/research team at the conference",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "2.8",
+          "text": "I cannot ask early-career academics/researchers to attend this conference in my place to provide them with new opportunities (disagree if you are an early-career academic)",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "2.9",
+          "text": "If I do not attend this conference in order to avoid flying, my actions may encourage others to avoid flying as well",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        }
+      ],
+      "outcomes": [
+        {
+          "min_score": 0,
+          "max_score": 6,
+          "tag": "0-6",
+          "at_a_glance": "In this context, you may have lots of flexibility in deciding whether or not to attend the conference.",
+          "in_detail": "If you are attending the conference to network, it may be useful to re-evaluate what you expect from networking, or, what networking means to you. Sometimes, we may put more of an emphasis on networking than necessary. It may be important to ask yourself why you want to meet specific individuals attending the conference and how it may benefit you, and more broadly, society. If you have already met face to face and have a working relationship, perhaps it may be helpful to email your contact about their upcoming plans to see if you can travel by train to another conference/event they are attending, meet halfway or brainstorm another meeting through some form of more sustainable travel. Additionally, you may both be flying to a conference that may be more necessary in the future, and can connect there. Remember: your time as a researcher and academic is valuable. Networking that is truly beneficial may look different than how you imagine, or have been taught to understand from academic norms."
+        },
+        {
+          "min_score": 7,
+          "max_score": 13,
+          "tag": "7-13",
+          "at_a_glance": "You are in a crucial spot: it does not seem overly important for you to attend this conference, although it is not completely fruitless.",
+          "in_detail": "In this instance, it may be helpful to reflect on what is most important to you in networking. For example, who are you hoping to meet and what exactly are you planning on discussing? Is this contact/speaker crucial to your research at the moment, or will there be a better time to reach out to them in the future (perhaps when they present more locally)? Are you hoping to collaborate on a project? Are you looking to discuss ideas? Are you an early-career academic looking for some career guidance? Reflecting on what you want out of networking may allow you to make more focused decisions about attending conferences to which you must fly. Although networking at conferences can allow organic meetings with individuals you may not have known before, perhaps reflecting on how useful this has been in the past, or whether these organic meetings can be emulated in other ways may provide you with some focus."
+        },
+        {
+          "min_score": 14,
+          "max_score": 20,
+          "tag": "14-20",
+          "at_a_glance": "It seems it may be quite important for you to attend this conference to strengthen professional relationships.",
+          "in_detail": "It may be useful to plan ahead: how can you make the most of this interaction? What questions would you like to ask and how can you access additional contacts through this meeting? You can also plan how you may continue the professional relationship without regular air travel. It may be beneficial to mention your plan and why you are hoping to reduce air travel to your new contact. Asking how they feel about your plan to reduce air travel may allow you to coordinate future meetings in more sustainable ways."
+        }
+      ]
+    },
+    {
+      "id": "social_context_learning",
+      "title": "Assessment 3: Social Context (Learning)",
+      "description": "Assess how the learning opportunities at this event impact your professional development, identity, and level of influence.",
+      "questions": [
+        {
+          "id": "3.1",
+          "text": "I am an early-career academic/researcher",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+        },
+        {
+          "id": "3.2",
+          "text": "At the conference, I will learn about ideas that I have not been exposed to before",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "3.3",
+          "text": "There will be an appropriate platform for me to learn (consider how best you learn and what is most comfortable for you)",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "3.4",
+          "text": "These ideas are relevant and important to my current research/work",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "3.5",
+          "text": "At the conference, I will learn from a researcher/academic who I cannot learn from virtually or locally at another conference",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "3.6",
+          "text": "The conference offers technical training/certification important to my career that I cannot do virtually/locally",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "3.7",
+          "text": "I am the only academic from my department/research team/project attending the conference",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "3.8",
+          "text": "I cannot ask early-career academics/researchers to attend this conference in my place to provide them with new opportunities (disagree if you are an early-career academic)",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        }
+      ],
+      "outcomes": [
+        {
+          "min_score": 0,
+          "max_score": 6,
+          "tag": "0-6",
+          "at_a_glance": "Based on your answers, it may be possible to rethink and re-evaluate what learning can entail.",
+          "in_detail": "A recent movement advocates for 'Slow Scholarship' or research, analysing, writing, editing and collaboration that involves lengthy deliberation and reflection and resists disruption to that process. Academics that advocate for slow scholarship write that, 'the business enterprise of academia produces a work rhythm that is rushed, riddled with anxiety and pressure to be ever-present.' Instead, they emphasise taking time to make research and collaboration more meaningful. In this case, that may look like asking yourself if learning from this conference can truly contribute to meaningful learning. Also, what is meaningful learning to you? It may be difficult for many, particularly early-career researchers, to engage in slow scholarship and to be selective about undertaking research and learning. In this case, slow scholarship may be something for senior academics to consider, in terms of how they structure courses and supervision, and influence the career progression of more junior academics. 174]"
+        },
+        {
+          "min_score": 7,
+          "max_score": 12,
+          "tag": "7-12",
+          "at_a_glance": "It may or may not be important for you to attend this conference to learn.",
+          "in_detail": "Similar to score 0-6, slow scholarship may interest you, and may be something you have capacity to implement. If not, you can pick and choose useful and appropriate elements of slow scholarship. Depending on what you are hoping to learn, researching other platforms that can provide you with the same knowledge may bring to light more local events. Additionally, if any of your colleagues are attending the conference, you can discuss ways to share knowledge from the conference if you choose not to attend eg, your preferred methods of note-taking so that you can learn from the conference, questions they can ask presenters on your behalf, etc."
+        },
+        {
+          "min_score": 13,
+          "max_score": 18,
+          "tag": "13-18",
+          "at_a_glance": "It looks like attending this conference may benefit your research.",
+          "in_detail": "Plan ahead to make sure you make the most out of your trip. What questions are you hoping to have answered? How else will you find answers if they are not addressed at the conference? How will you continue research after this experience? How will you keep in touch with whomever provided you with new information? Considering these questions before attending the conference may give you more time and space to avoid attending a conference to which you must fly in the future."
+        }
+      ]
+    },
+    {
+      "id": "social_context_presenting",
+      "title": "Assessment 4: Social Context (Presenting)",
+      "description": "Assess how presenting your work at this event impacts your professional identity, institutional relationships, and influence.",
+      "questions": [
+        {
+          "id": "4.1",
+          "text": "I am an early-career academic/researcher",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+        },
+        {
+          "id": "4.2",
+          "text": "At the conference, I will be presenting research I have not shared before",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "4.3",
+          "text": "I am presenting research I cannot share locally/virtually at another conference",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "4.4",
+          "text": "I am confident that my work is ready to share, or if my work is unfinished, I am confident it is ready for feedback",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "4.5",
+          "text": "At the conference, I will be given an appropriate platform to share my research/ideas (eg. enough speaking time, proper technology, relevant audience)",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "4.6",
+          "text": "Sharing my research through this platform will enhance my academic reputation or increase my likelihood of getting published",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "4.7",
+          "text": "Attending the conference despite flying will not hinder the credibility of my research (eg. work on climate change, social justice etc.)",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "4.8",
+          "text": "I cannot ask early-career academics/researchers to attend this conference in my place to provide them with new opportunities (disagree if you are an early-career academic)",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "4.9",
+          "text": "I am the only academic from my department/research team attending the conference to share ideas/research",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        }
+      ],
+      "outcomes": [
+        {
+          "min_score": 0,
+          "max_score": 7,
+          "tag": "0-7",
+          "at_a_glance": "Attending this conference may not be a priority for you.",
+          "in_detail": "It may be useful to reconsider why you want to share your research and ideas at this particular time and through this particular platform. Would it benefit your research and your career if you took more time to present these ideas? Would it benefit your research and career if you presented your research elsewhere, perhaps more locally? Additionally, if you are in a research group, consider why you may be the best person to share this work and how it would look for another teammate to share the work. What other ways may be more appropriate to share your ideas at this particular time? Can you ask another academic to mention your work, if they are presenting something similar? Lastly, research shows that green academics, particularly climate researchers, with large carbon footprints often lose credibility. Alternatively, communicating your own behaviour in relation to climate change might be particularly effective—thus, avoiding this conference may be a way to draw attention to your work."
+        },
+        {
+          "min_score": 8,
+          "max_score": 13,
+          "tag": "8-13",
+          "at_a_glance": "It may be neither important, nor unimportant to attend this conference.",
+          "in_detail": "If you have scored within this interval, it may be useful to gauge which statements are most relevant to your situation. For example, if it is the right time for you to share research, is this the right conference at which to present, and why? What are your criteria for the most beneficial conferences at which to share your work? Depending on your field, not attending the conference may improve credibility and reputability: attendees may find your consideration of the environmental impacts of air travel inspiring."
+        },
+        {
+          "min_score": 14,
+          "max_score": 20,
+          "tag": "14-20",
+          "at_a_glance": "It may be important, and an appropriate time/platform to share/present your ideas.",
+          "in_detail": "At this conference, try and plan ahead so that you make the biggest impact with your presentation. If you are interested in reducing your flying, inform your audience of this goal, perhaps they will support your goal and collaborate with you, or seek out your research through alternative means, contributing to a shift in academic norms. Think about what elements of your work you would like to present, and why. What are the next steps for your research and how can this presentation support those steps?"
+        }
+      ]
+    },
+    {
+      "id": "material_context",
+      "title": "Assessment 5: Material Context",
+      "description": "Evaluate the practical elements such as available technologies, institutional rules, and scheduling constraints, that influence your travel decision.",
+      "questions": [
+        {
+          "id": "5.1",
+          "text": "Attending this conference would fulfil certain grant requirements",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "5.2",
+          "text": "I risk losing my grant/funding if I do not attend this particular event/conference",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+        },
+        {
+          "id": "5.3",
+          "text": "I rely strongly on this particular grant",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+        },
+        {
+          "id": "5.4",
+          "text": "There are no local or virtual events/conferences that could instead fulfil my grant requirements",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "5.5",
+          "text": "Online platforms or other fora are not appropriate for disseminating my research/ideas (eg. not interactive enough, not enough traction)",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "5.6",
+          "text": "This is the only non-local conference/event I can attend all year (eg. due to teaching obligations, familial obligations, lack of funding etc.)",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        },
+        {
+          "id": "5.7",
+          "text": "I am able to visit friends/family, attend other conferences/professional meetings or conduct research due to the location of the conference",
+          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+        }
+      ],
+      "outcomes": [
+        {
+          "min_score": 0,
+          "max_score": 5,
+          "tag": "0-5",
+          "at_a_glance": "The aforementioned material considerations may not stop you from engaging in a more sustainable career path.",
+          "in_detail": "However, certain material limitations may be more important than others, including grant stipulations and whether your research can be disseminated through other means. It may be important to consider what is truly important and non-negotiable when deciding whether to attend a conference to which you must fly. Regardless, based on these material considerations, you may have some flexibility in deciding whether or not to attend this conference. For example, if there are other ways to fulfill your grant requirements, taking the time to consider these options may be helpful. Additionally, if you are considering also attending another overseas conference, perhaps deciding which conference may be more beneficial to your work and your career can help you reduce air travel."
+        },
+        {
+          "min_score": 6,
+          "max_score": 12,
+          "tag": "6-12",
+          "at_a_glance": "You may be in a tricky spot. Based on the material context, it may be neither pressing, nor unimportant to attend this conference.",
+          "in_detail": "Which material context is the most binding? And why? If there are multiple elements that may cause challenges to avoiding the conference or maximising the benefits of the trip, how do they differ? Is one more challenging than the other? Here, it may be useful to evaluate your capacity to change, or alter your material realities to better gauge the importance of attending the conference. Perhaps focusing on the material factor that is easiest to change can illuminate more sustainable ways to engage in research and collaboration. For example, is it possible for you to reschedule events to be able to attend more local, or more beneficial conferences? Alternatively, can you ensure that you can gain other benefits from travelling to the conference, like meeting family members or conducting research at the location?"
+        },
+        {
+          "min_score": 13,
+          "max_score": 18,
+          "tag": "13-18",
+          "at_a_glance": "It seems that material considerations, like technology, regulations and scheduling make it important for you to attend the conference.",
+          "in_detail": "Although it is often out of our scope to alter our material realities, in the future, if possible, early planning may prevent schedule hindrances or allow you to make the most out of the trip by visiting family/friends, planning meetings or conducting research at the conference location. Additionally, awareness of grant stipulations may offer you some bargaining power, the ability to discuss grants beforehand or if possible, the ability to choose different grants, although this may be difficult for many."
+        }
+      ]
+    }
+  ]
 }
