@@ -101,6 +101,7 @@ export const Assessment = () => {
                     name={question.id}
                     id={`${question.id}-disagree-choice`}
                     value={question.scores.disagree}
+                    aria-required="true"
                     required
                   />
                   <label htmlFor={`${question.id}-disagree-choice`}>
@@ -113,6 +114,8 @@ export const Assessment = () => {
                     name={question.id}
                     id={`${question.id}-neutral-choice`}
                     value={question.scores.neutral}
+                    aria-required="true"
+                    required
                   />
                   <label htmlFor={`${question.id}-neutral-choice`}>
                     Neutral
@@ -124,6 +127,8 @@ export const Assessment = () => {
                     name={question.id}
                     id={`${question.id}-agree-choice`}
                     value={question.scores.agree}
+                    aria-required="true"
+                    required
                   />
                   <label htmlFor={`${question.id}-agree-choice`}>Agree</label>
                 </div>
@@ -137,13 +142,18 @@ export const Assessment = () => {
               >
                 See Results
               </button>
-              {nextAssessmentId && (
+              {nextAssessmentId ? (
                 <Link
                   to={`/${nextAssessmentId}`}
                   className="cursor-pointer py-2 px-5 bg-midnight text-sandstone-tint rounded-r-full"
                 >
                   Next Assessment
-                </Link>
+                </Link>) : (<Link
+                  to={`/`}
+                  className="cursor-pointer py-2 px-5 bg-midnight text-sandstone-tint rounded-r-full"
+                >
+                  View All Results
+                </Link> 
               )}
             </div>
           </form>
