@@ -75,6 +75,7 @@ export const Assessment = () => {
             {assessmentCategory.title}
           </h1>
           <p className="max-w-3xl">{assessmentCategory.description}</p>
+          <p className="font-medium">Choose one answer for each question.</p>
 
           <div className="max-w-lg w-full h-0.5 my-4 bg-lagoon rounded-full">
             &nbsp;
