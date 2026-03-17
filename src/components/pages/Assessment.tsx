@@ -3,6 +3,7 @@ import { MainLayout } from "../layout/MainLayout";
 import AssessmentsConfig from "../../assets/assessments_config.json";
 import { useState } from "react";
 import { ResultsModal } from "../modal/ResultsModal";
+import type { UpdateResultsPayload } from "../../App";
 
 interface Questions {
   id: string;
@@ -30,7 +31,7 @@ interface AssessmentCategory {
   outcomes: Outcome[];
 }
 
-export const Assessment = () => {
+export const Assessment = ({onUpdateResults}: {onUpdateResults: (data: UpdateResultsPayload) => void}) => {
   const { pathname } = useLocation();
   const currPageId = pathname.slice(1);
 
@@ -47,23 +48,43 @@ export const Assessment = () => {
   const nextAssessmentId: string | undefined =
     AssessmentsConfig.data[currPageIdIndex + 1]?.id;
 
-  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>): void => {
+  function handleSubmit (e: React.SubmitEvent<HTMLFormElement>): void {
     const data = new FormData(e.currentTarget);
-    let totalScore = 0;
-    for (const [, score] of data) {
-      totalScore += +score;
+
+    const allResponses = [];
+
+    for (const [questionId, score] of data) {
+      const response = {
+        questionId,
+        questionText: assessmentCategory.questions.find(question => question.id === questionId)?.text,
+        questionScore: +score
+      }
+      allResponses.push(response);
     }
-    setAssessmentScore(totalScore);
+
+    const results = {
+      page: currPageId,
+      allResponses,
+      totalScore: allResponses.reduce((acc, c) => acc + c.questionScore, 0)
+    }
+    setAssessmentScore(results.totalScore);
+
 
     const validOutcome = assessmentCategory.outcomes.find(
       (outcome) =>
-        totalScore >= outcome.min_score &&
-        totalScore <= outcome.max_score,
+        results.totalScore >= outcome.min_score &&
+        results.totalScore <= outcome.max_score,
     );
     setOutcome(validOutcome);
     setToggleModal(true)
 
-    console.log(validOutcome);
+    onUpdateResults({
+      page: results.page,
+      responses: results.allResponses,
+      totalScore: results.totalScore,
+      outcome: validOutcome
+    })
+
     e.preventDefault();
   };
 

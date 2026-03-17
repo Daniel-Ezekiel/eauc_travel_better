@@ -3,8 +3,9 @@ import { MainLayout } from "../layout/MainLayout"
 import assessmentsData from "../../assets/assessments_config.json";
 
 
-export const Home = () => {    
+export const Home = ({results}: {results: object}) => {    
   const { data } = assessmentsData;
+  console.log(results)
 
   return (
     <MainLayout>
