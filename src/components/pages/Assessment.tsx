@@ -3,7 +3,7 @@ import { MainLayout } from "../layout/MainLayout";
 import AssessmentsConfig from "../../assets/assessments_config.json";
 import { useState } from "react";
 import { ResultsModal } from "../modal/ResultsModal";
-import type { UpdateResultsPayload } from "../../App";
+import type { Results, UpdateResultsPayload } from "../../App";
 
 interface Questions {
   id: string;
@@ -15,7 +15,7 @@ interface Questions {
   };
 }
 
-interface Outcome {
+export interface Outcome {
   min_score: number;
   max_score: number;
   tag: string;
@@ -31,12 +31,27 @@ interface AssessmentCategory {
   outcomes: Outcome[];
 }
 
-export const Assessment = ({onUpdateResults}: {onUpdateResults: (data: UpdateResultsPayload) => void}) => {
+export const Assessment = ({
+  results,
+  onUpdateResults,
+}: {
+  results: Results;
+  onUpdateResults: (data: UpdateResultsPayload) => void;
+}) => {
   const { pathname } = useLocation();
   const currPageId = pathname.slice(1);
 
+  const isAllResultsAvailable = Object.values(results).every(
+    (result) => Object.keys(result).length > 0,
+  );
+  const isResultsAvailable =
+    Object.values(results[currPageId as keyof Results]).length !== 0;
+  const currPageResults =
+    isResultsAvailable && results[currPageId as keyof Results];
+
   const [assessmentScore, setAssessmentScore] = useState<number>(0);
   const [toggleModal, setToggleModal] = useState<boolean>(false);
+  // const [showNextButton, setShowNextButton] = useState<boolean>(false);
   const [outcome, setOutcome] = useState<undefined | Outcome>(undefined);
 
   const [assessmentCategory]: AssessmentCategory[] =
@@ -48,7 +63,7 @@ export const Assessment = ({onUpdateResults}: {onUpdateResults: (data: UpdateRes
   const nextAssessmentId: string | undefined =
     AssessmentsConfig.data[currPageIdIndex + 1]?.id;
 
-  function handleSubmit (e: React.SubmitEvent<HTMLFormElement>): void {
+  function handleSubmit(e: React.SubmitEvent<HTMLFormElement>): void {
     const data = new FormData(e.currentTarget);
 
     const allResponses = [];
@@ -56,19 +71,20 @@ export const Assessment = ({onUpdateResults}: {onUpdateResults: (data: UpdateRes
     for (const [questionId, score] of data) {
       const response = {
         questionId,
-        questionText: assessmentCategory.questions.find(question => question.id === questionId)?.text,
-        questionScore: +score
-      }
+        questionText: assessmentCategory.questions.find(
+          (question) => question.id === questionId,
+        )?.text,
+        questionScore: +score,
+      };
       allResponses.push(response);
     }
 
     const results = {
       page: currPageId,
       allResponses,
-      totalScore: allResponses.reduce((acc, c) => acc + c.questionScore, 0)
-    }
+      totalScore: allResponses.reduce((acc, c) => acc + c.questionScore, 0),
+    };
     setAssessmentScore(results.totalScore);
-
 
     const validOutcome = assessmentCategory.outcomes.find(
       (outcome) =>
@@ -76,17 +92,18 @@ export const Assessment = ({onUpdateResults}: {onUpdateResults: (data: UpdateRes
         results.totalScore <= outcome.max_score,
     );
     setOutcome(validOutcome);
-    setToggleModal(true)
+    setToggleModal(true);
 
     onUpdateResults({
       page: results.page,
+      title: assessmentCategory.title,
       responses: results.allResponses,
       totalScore: results.totalScore,
-      outcome: validOutcome
-    })
+      outcome: validOutcome,
+    });
 
     e.preventDefault();
-  };
+  }
 
   return (
     <>
@@ -107,54 +124,77 @@ export const Assessment = ({onUpdateResults}: {onUpdateResults: (data: UpdateRes
             className="max-w-200 mx-auto grid gap-5"
             onSubmit={handleSubmit}
           >
-            {assessmentCategory.questions.map((question) => (
-              <fieldset
-                key={question.id}
-                className="form-control flex flex-col gap-2"
-              >
-                <legend className="mb-2 w-full font-normal text-2xl">
-                  {question.id.slice(2)}. {question.text}
-                </legend>
+            {assessmentCategory.questions.map((question) => {
+              const currPageResponses = (currPageResults &&
+                currPageResults.responses) as unknown as {
+                questionId: string;
+                questionScore: number;
+              }[];
+              const currQuestion =
+                currPageResults &&
+                currPageResponses.find((res) => res.questionId === question.id);
 
-                <div className="flex gap-2 justify-start items-center">
-                  <input
-                    type="radio"
-                    name={question.id}
-                    id={`${question.id}-disagree-choice`}
-                    value={question.scores.disagree}
-                    aria-required="true"
-                    required
-                  />
-                  <label htmlFor={`${question.id}-disagree-choice`}>
-                    Disagree
-                  </label>
-                </div>
-                <div className="flex gap-2 justify-start items-center">
-                  <input
-                    type="radio"
-                    name={question.id}
-                    id={`${question.id}-neutral-choice`}
-                    value={question.scores.neutral}
-                    aria-required="true"
-                    required
-                  />
-                  <label htmlFor={`${question.id}-neutral-choice`}>
-                    Neutral
-                  </label>
-                </div>
-                <div className="flex gap-2 justify-start items-center">
-                  <input
-                    type="radio"
-                    name={question.id}
-                    id={`${question.id}-agree-choice`}
-                    value={question.scores.agree}
-                    aria-required="true"
-                    required
-                  />
-                  <label htmlFor={`${question.id}-agree-choice`}>Agree</label>
-                </div>
-              </fieldset>
-            ))}
+              return (
+                <fieldset
+                  key={question.id}
+                  className="form-control flex flex-col gap-2"
+                >
+                  <legend className="mb-2 w-full font-normal text-2xl">
+                    {question.id.slice(2)}. {question.text}
+                  </legend>
+
+                  <div className="flex gap-2 justify-start items-center">
+                    <input
+                      type="radio"
+                      name={question.id}
+                      id={`${question.id}-disagree-choice`}
+                      value={question.scores.disagree}
+                      defaultChecked={
+                        currQuestion &&
+                        currQuestion.questionScore === question.scores.disagree
+                      }
+                      aria-required="true"
+                      required
+                    />
+                    <label htmlFor={`${question.id}-disagree-choice`}>
+                      Disagree
+                    </label>
+                  </div>
+                  <div className="flex gap-2 justify-start items-center">
+                    <input
+                      type="radio"
+                      name={question.id}
+                      id={`${question.id}-neutral-choice`}
+                      value={question.scores.neutral}
+                      defaultChecked={
+                        currQuestion &&
+                        currQuestion.questionScore === question.scores.neutral
+                      }
+                      aria-required="true"
+                      required
+                    />
+                    <label htmlFor={`${question.id}-neutral-choice`}>
+                      Neutral
+                    </label>
+                  </div>
+                  <div className="flex gap-2 justify-start items-center">
+                    <input
+                      type="radio"
+                      name={question.id}
+                      id={`${question.id}-agree-choice`}
+                      value={question.scores.agree}
+                      defaultChecked={
+                        currQuestion &&
+                        currQuestion.questionScore === question.scores.agree
+                      }
+                      aria-required="true"
+                      required
+                    />
+                    <label htmlFor={`${question.id}-agree-choice`}>Agree</label>
+                  </div>
+                </fieldset>
+              );
+            })}
 
             <div className="flex justify-between">
               <button
@@ -163,25 +203,36 @@ export const Assessment = ({onUpdateResults}: {onUpdateResults: (data: UpdateRes
               >
                 See Results
               </button>
-              {nextAssessmentId ? (
+
+              {nextAssessmentId && isResultsAvailable && (
                 <Link
                   to={`/${nextAssessmentId}`}
                   className="cursor-pointer py-2 px-5 bg-midnight text-sandstone-tint rounded-r-full"
                 >
                   Next Assessment
-                </Link>) : (<Link
-                  to={`/`}
+                </Link>
+              )}
+
+              {isAllResultsAvailable && (
+                <Link
+                  to={`/assessment_results`}
                   className="cursor-pointer py-2 px-5 bg-midnight text-sandstone-tint rounded-r-full"
                 >
                   View All Results
-                </Link> 
+                </Link>
               )}
             </div>
           </form>
         </section>
-        {
-          toggleModal && <ResultsModal score={assessmentScore} tag={(outcome as Outcome).tag} summary={(outcome as Outcome).at_a_glance} details={(outcome as Outcome).in_detail} handleClick={() => setToggleModal(false)} />
-        }
+        {toggleModal && (
+          <ResultsModal
+            score={assessmentScore}
+            tag={(outcome as Outcome).tag}
+            summary={(outcome as Outcome).at_a_glance}
+            details={(outcome as Outcome).in_detail}
+            handleClick={() => setToggleModal(false)}
+          />
+        )}
       </MainLayout>
     </>
   );
