@@ -23,13 +23,13 @@ export interface AssessmentPage {
   assessment_results: Record<string, unknown>;
 }
 
-type ResultResponse = {
+interface ResultResponse{
     questionId: string,
     questionText: string,
     questionScore: number
   }
 
-export type ResultCategory = {
+export interface ResultCategory {
   totalScore: number,
   outcome: Outcome,
   responses: ResultResponse[]

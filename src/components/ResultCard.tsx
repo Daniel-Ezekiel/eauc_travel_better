@@ -7,8 +7,6 @@ export const ResultCard = ({
 }) => {
   const outcome = result.outcome;
 
-  console.log(result);
-
   return (
     <div className="p-8 grid place-items-start bg-sandstone rounded-[1.25rem] rounded-br-none text-midnight">
       <div className="grid place-items-start gap-2">

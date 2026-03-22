@@ -16,3 +16,7 @@
   --color-slate: #3b464c;
   --color-lagoon: #29a193;
 }
+
+body.modal-active{
+  overflow: hidden
+}

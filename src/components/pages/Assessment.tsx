@@ -51,7 +51,6 @@ export const Assessment = ({
 
   const [assessmentScore, setAssessmentScore] = useState<number>(0);
   const [toggleModal, setToggleModal] = useState<boolean>(false);
-  // const [showNextButton, setShowNextButton] = useState<boolean>(false);
   const [outcome, setOutcome] = useState<undefined | Outcome>(undefined);
 
   const [assessmentCategory]: AssessmentCategory[] =
@@ -93,6 +92,7 @@ export const Assessment = ({
     );
     setOutcome(validOutcome);
     setToggleModal(true);
+    document.querySelector("body")?.classList.add("modal-active");
 
     onUpdateResults({
       page: results.page,
@@ -230,7 +230,12 @@ export const Assessment = ({
             tag={(outcome as Outcome).tag}
             summary={(outcome as Outcome).at_a_glance}
             details={(outcome as Outcome).in_detail}
-            handleClick={() => setToggleModal(false)}
+            handleClick={() => {
+              setToggleModal(false);
+              document
+                .querySelector(".modal-active")
+                ?.classList.remove("modal-active");
+            }}
           />
         )}
       </MainLayout>
