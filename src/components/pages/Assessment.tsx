@@ -207,7 +207,7 @@ export const Assessment = ({
               {nextAssessmentId && isResultsAvailable && (
                 <Link
                   to={`/${nextAssessmentId}`}
-                  className="cursor-pointer py-2 px-5 bg-midnight text-sandstone-tint rounded-r-full"
+                  className="btn_modal-close cursor-pointer py-2 px-5 bg-midnight text-sandstone-tint rounded-r-full"
                 >
                   Next Assessment
                 </Link>
