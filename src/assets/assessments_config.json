@@ -1,4 +1,8 @@
 {
+  "home_page": {
+    "title": "Air Travel Justification Tool",
+    "description": "This reflective tool is designed to help you evaluate the necessity of flying to academic conferences and meetings. Rather than asking you to completely eliminate air travel, it guides you through a series of short assessments to weigh the professional benefits of your trip against its environmental impact. Use this tool to make conscious, sustainable travel choices that support global sustainability goals."
+  },
   "data": [
     {
       "id": "individual_context",
@@ -8,32 +12,56 @@
         {
           "id": "1.1",
           "text": "I believe social media is a useful tool for disseminating ideas and/or research",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "1.2",
           "text": "I possess skills to disseminate these specific ideas and/or research through social media or other online or more local platforms",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "1.3",
           "text": "I possess skills to promote these specific ideas and/or research through social media or other online or more local platforms",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "1.4",
           "text": "I possess skills to learn about specific ideas and/or research that will be discussed at the conference through social media or other online or more local platforms",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "1.5",
           "text": "I possess skills to coordinate, collaborate and network with academics/researchers on these specific ideas and/or research through social media or other online or more local platforms",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "1.6",
           "text": "It would be helpful to use the time spent travelling and attending the conference to instead conduct research/continue work, which may improve my findings and its impact on my career",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         }
       ],
       "outcomes": [
@@ -68,47 +96,83 @@
         {
           "id": "2.1",
           "text": "I am an early-career academic/researcher",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 4
+          }
         },
         {
           "id": "2.2",
           "text": "At the conference, I will meet academics/researchers I have not met before",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "2.3",
           "text": "At the conference, I will meet academics/researchers I have not met in person in over 1 year",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "2.4",
           "text": "At the conference, I will meet academics/researchers with whom I cannot connect virtually",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "2.5",
           "text": "At the conference, I will meet academics/researchers I cannot meet locally",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "2.6",
           "text": "I will get an appropriate opportunity to chat with these particular academics/researchers (eg. enough time, one on one interactions, comfortable environment etc.)",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "2.7",
           "text": "I am the only academic representing my department/research team at the conference",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "2.8",
           "text": "I cannot ask early-career academics/researchers to attend this conference in my place to provide them with new opportunities (disagree if you are an early-career academic)",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "2.9",
           "text": "If I do not attend this conference in order to avoid flying, my actions may encourage others to avoid flying as well",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         }
       ],
       "outcomes": [
@@ -143,42 +207,74 @@
         {
           "id": "3.1",
           "text": "I am an early-career academic/researcher",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 4
+          }
         },
         {
           "id": "3.2",
           "text": "At the conference, I will learn about ideas that I have not been exposed to before",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "3.3",
           "text": "There will be an appropriate platform for me to learn (consider how best you learn and what is most comfortable for you)",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "3.4",
           "text": "These ideas are relevant and important to my current research/work",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "3.5",
           "text": "At the conference, I will learn from a researcher/academic who I cannot learn from virtually or locally at another conference",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "3.6",
           "text": "The conference offers technical training/certification important to my career that I cannot do virtually/locally",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "3.7",
           "text": "I am the only academic from my department/research team/project attending the conference",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "3.8",
           "text": "I cannot ask early-career academics/researchers to attend this conference in my place to provide them with new opportunities (disagree if you are an early-career academic)",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         }
       ],
       "outcomes": [
@@ -213,47 +309,83 @@
         {
           "id": "4.1",
           "text": "I am an early-career academic/researcher",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 4
+          }
         },
         {
           "id": "4.2",
           "text": "At the conference, I will be presenting research I have not shared before",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "4.3",
           "text": "I am presenting research I cannot share locally/virtually at another conference",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "4.4",
           "text": "I am confident that my work is ready to share, or if my work is unfinished, I am confident it is ready for feedback",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "4.5",
           "text": "At the conference, I will be given an appropriate platform to share my research/ideas (eg. enough speaking time, proper technology, relevant audience)",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "4.6",
           "text": "Sharing my research through this platform will enhance my academic reputation or increase my likelihood of getting published",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "4.7",
           "text": "Attending the conference despite flying will not hinder the credibility of my research (eg. work on climate change, social justice etc.)",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "4.8",
           "text": "I cannot ask early-career academics/researchers to attend this conference in my place to provide them with new opportunities (disagree if you are an early-career academic)",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "4.9",
           "text": "I am the only academic from my department/research team attending the conference to share ideas/research",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         }
       ],
       "outcomes": [
@@ -288,37 +420,65 @@
         {
           "id": "5.1",
           "text": "Attending this conference would fulfil certain grant requirements",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "5.2",
           "text": "I risk losing my grant/funding if I do not attend this particular event/conference",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 4
+          }
         },
         {
           "id": "5.3",
           "text": "I rely strongly on this particular grant",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 4 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 4
+          }
         },
         {
           "id": "5.4",
           "text": "There are no local or virtual events/conferences that could instead fulfil my grant requirements",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "5.5",
           "text": "Online platforms or other fora are not appropriate for disseminating my research/ideas (eg. not interactive enough, not enough traction)",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "5.6",
           "text": "This is the only non-local conference/event I can attend all year (eg. due to teaching obligations, familial obligations, lack of funding etc.)",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         },
         {
           "id": "5.7",
           "text": "I am able to visit friends/family, attend other conferences/professional meetings or conduct research due to the location of the conference",
-          "scores": { "disagree": 0, "neutral": 1, "agree": 2 }
+          "scores": {
+            "disagree": 0,
+            "neutral": 1,
+            "agree": 2
+          }
         }
       ],
       "outcomes": [

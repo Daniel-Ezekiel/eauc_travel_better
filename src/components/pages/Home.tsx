@@ -9,22 +9,15 @@ export const Home = ({ results }: { results: object }) => {
     (result) => Object.keys(result).length,
   );
 
-  const { data } = assessmentsData;
+  const { home_page, data } = assessmentsData;
 
   return (
     <MainLayout>
       <section className="mt-4 py-4 flex flex-col items-center gap-4 md:items-start">
         <h1 className="font-medium text-4xl text-midnight sm:text-5xl">
-          Air Travel Justification Tool
+          {home_page.title}
         </h1>
-        <p className="">
-          This reflective tool is designed to help you evaluate the necessity of
-          flying to academic conferences and meetings. Rather than asking you to
-          completely eliminate air travel, it guides you through a series of
-          short assessments to weigh the professional benefits of your trip
-          against its environmental impact. Use this tool to make conscious,
-          sustainable travel choices that support global sustainability goals.
-        </p>
+        <p className="">{home_page.description}</p>
 
         <div className="w-full h-0.5 mt-4 bg-lagoon rounded-full">&nbsp;</div>
       </section>
