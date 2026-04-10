@@ -22,15 +22,15 @@ This is the complete technical reference for developers maintaining or extending
 
 ## 1. Tech Stack
 
-| Technology | Version | Role |
-|---|---|---|
-| <a href="https://react.dev" target="_blank">React</a> | 19.x | UI framework |
-| <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> | ~5.9 | Static typing |
-| <a href="https://vite.dev" target="_blank">Vite</a> | 7.x | Build tool & dev server |
-| <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a> | 4.x (Vite plugin) | Utility-first styling |
-| <a href="https://reactrouter.com/" target="_blank">React Router</a> | 7.x | Client-side routing |
-| <a href="https://ekoopmans.github.io/html2pdf.js/" target="_blank">html2pdf.js</a> | 0.14.x | PDF export of results |
-| <a href="https://react-icons.github.io/react-icons/" target="_blank">react-icons</a> | 5.x | Icon library |
+| Technology                                                                           | Version           | Role                    |
+| ------------------------------------------------------------------------------------ | ----------------- | ----------------------- |
+| <a href="https://react.dev" target="_blank">React</a>                                | 19.x              | UI framework            |
+| <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>             | ~5.9              | Static typing           |
+| <a href="https://vite.dev" target="_blank">Vite</a>                                  | 7.x               | Build tool & dev server |
+| <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>                  | 4.x (Vite plugin) | Utility-first styling   |
+| <a href="https://reactrouter.com/" target="_blank">React Router</a>                  | 7.x               | Client-side routing     |
+| <a href="https://ekoopmans.github.io/html2pdf.js/" target="_blank">html2pdf.js</a>   | 0.14.x            | PDF export of results   |
+| <a href="https://react-icons.github.io/react-icons/" target="_blank">react-icons</a> | 5.x               | Icon library            |
 
 ---
 
@@ -54,12 +54,12 @@ The app will be available at `http://localhost:5173`.
 
 **Available Scripts:**
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start local dev server with HMR |
-| `npm run build` | Type-check and build for production (`/dist`) |
-| `npm run preview` | Serve the production build locally |
-| `npm run lint` | Run ESLint |
+| Command           | Description                                   |
+| ----------------- | --------------------------------------------- |
+| `npm run dev`     | Start local dev server with HMR               |
+| `npm run build`   | Type-check and build for production (`/dist`) |
+| `npm run preview` | Serve the production build locally            |
+| `npm run lint`    | Run ESLint                                    |
 
 ---
 
@@ -76,7 +76,7 @@ eauc_travel_better/
 │   │   ├── pages/
 │   │   │   ├── Home.tsx              # Homepage with assessment card grid
 │   │   │   ├── Assessment.tsx        # Dynamic assessment form page (reused for all 5)
-│   │   │   └── Results.tsx           # Final results summary page
+│   │   │   └── AllResults.tsx           # Final results summary page
 │   │   ├── modal/
 │   │   │   └── ResultsModal.tsx      # Per-assessment score modal (accessible)
 │   │   ├── layout/
@@ -89,7 +89,9 @@ eauc_travel_better/
 │   │   └── ResultCard.tsx            # Card component for results page
 │   ├── contexts/
 │   │   └── ResultsContext.tsx        # React Context + Dispatch for results state
-│   ├── App.tsx                       # Root component: router, reducer, type exports
+│   ├── types/
+│   │   └── index.ts                  # All shared TypeScript interfaces (single source of truth)
+│   ├── App.tsx                       # Root component: router and reducer
 │   ├── App.css                       # Global styles
 │   ├── index.css                     # Tailwind base import
 │   └── main.tsx                      # React DOM entry point
@@ -116,15 +118,15 @@ The entire application is data-driven. `assessments_config.json` is imported dir
 
 React Router v7 is used for client-side routing. All routes are defined statically in `App.tsx`.
 
-| Route | Component | Description |
-|---|---|---|
-| `/` | `Home` | Lists all assessments as cards |
-| `/individual_context` | `Assessment` | Assessment 1 form |
-| `/social_context_networking` | `Assessment` | Assessment 2 form |
-| `/social_context_learning` | `Assessment` | Assessment 3 form |
-| `/social_context_presenting` | `Assessment` | Assessment 4 form |
-| `/material_context` | `Assessment` | Assessment 5 form |
-| `/assessment_results` | `Results` | Final results summary |
+| Route                        | Component    | Description                    |
+| ---------------------------- | ------------ | ------------------------------ |
+| `/`                          | `Home`       | Lists all assessments as cards |
+| `/individual_context`        | `Assessment` | Assessment 1 form              |
+| `/social_context_networking` | `Assessment` | Assessment 2 form              |
+| `/social_context_learning`   | `Assessment` | Assessment 3 form              |
+| `/social_context_presenting` | `Assessment` | Assessment 4 form              |
+| `/material_context`          | `Assessment` | Assessment 5 form              |
+| `/assessment_results`        | `AllResults` | Final results summary          |
 
 The `Assessment` component is **reused across all five assessment routes**. It determines which assessment to render by reading `useLocation().pathname` and filtering the config `data` array.
 
@@ -170,38 +172,94 @@ interface ResultCategory {
 ```
 
 **Data flow:**
+
 1. User submits an assessment form in `Assessment.tsx`.
 2. `handleSubmit` calculates the total score, finds the matching outcome band, and calls `onUpdateResults`.
 3. `onUpdateResults` (from `App.tsx`) calls `dispatch`, triggering `resultsReducer`.
 4. The reducer spreads the new result into the global `results` object.
 5. The updated `results` object is passed as a prop to all page components.
 
-### Key Type Definitions (`App.tsx`)
+### Key Type Definitions (`src/types/index.ts`)
+
+All shared interfaces live in a single file, grouped into three logical categories. Types not prefixed with `export` are module-private (used only within the types file itself as building blocks).
 
 ```typescript
+// ─── Assessment Config Types ──────────────────────────────────────────────────
+
+interface Questions {
+  // private — used only by AssessmentCategory
+  id: string;
+  text: string;
+  scores: { disagree: number; neutral: number; agree: number };
+}
+
+export interface Outcome {
+  min_score: number;
+  max_score: number;
+  tag: string;
+  at_a_glance: string;
+  in_detail: string;
+}
+
+export interface AssessmentCategory {
+  id: string;
+  title: string;
+  description: string;
+  questions: Questions[];
+  outcomes: Outcome[];
+}
+
+// ─── Results / State Types ────────────────────────────────────────────────────
+
 interface ResultResponse {
+  // private — used only by ResultCategory
   questionId: string;
   questionText: string;
   questionScore: number;
 }
 
-interface ResultCategory {
+export interface ResultCategory {
   assessment_title: string;
   totalScore: number;
   outcome: Outcome;
   responses: ResultResponse[];
 }
 
-interface Results {
-  individual_context: ResultCategory | Record<string, never>;
-  social_context_networking: ResultCategory | Record<string, never>;
-  social_context_learning: ResultCategory | Record<string, never>;
-  social_context_presenting: ResultCategory | Record<string, never>;
-  material_context: ResultCategory | Record<string, never>;
+export interface AssessmentResults {
+  // used by ResultCard.tsx
+  assessment_title: string;
+  responses: unknown;
+  totalScore: number;
+  outcome: Outcome;
+}
+
+export interface Results {
+  individual_context: ResultCategory | {};
+  social_context_networking: ResultCategory | {};
+  social_context_learning: ResultCategory | {};
+  social_context_presenting: ResultCategory | {};
+  material_context: ResultCategory | {};
+}
+
+// ─── Reducer / Dispatch Types ─────────────────────────────────────────────────
+
+export interface AssessmentPage {
+  // used by ResultsContext and resultsReducer
+  assessment_id: string;
+  assessment_results: Record<string, unknown>;
+}
+
+export interface UpdateResultsPayload {
+  // used by Assessment.tsx → App.tsx
+  page: string;
+  title: string;
+  responses: unknown;
+  totalScore: number;
+  outcome: unknown;
 }
 ```
 
-> The `Record<string, never>` union allows the initial empty `{}` objects to type-check cleanly before a user completes an assessment.
+> The `ResultCategory | {}` union allows the initial empty `{}` objects to satisfy the type checker before a user completes an assessment.
 
 ---
 
@@ -209,15 +267,15 @@ interface Results {
 
 This application was built with accessibility as a first-class concern, adhering to WCAG 2.1 AA standards.
 
-| Feature | Implementation |
-|---|---|
-| Semantic form structure | Questions use `<fieldset>` + `<legend>` for screen reader grouping |
-| Required fields | `aria-required="true"` and HTML `required` on all radio inputs |
-| Results Modal | `role="dialog"`, `aria-modal="true"`, `aria-labelledby` |
-| Modal focus management | Auto-focuses close button on open via `useRef` + `useEffect` |
-| Focus trap | Custom `keydown` handler traps `Tab`/`Shift+Tab` within modal bounds |
-| Escape key | Closes the modal (standard dialog pattern) |
-| Route changes | `ScrollToTop` component resets scroll position on navigation |
+| Feature                 | Implementation                                                       |
+| ----------------------- | -------------------------------------------------------------------- |
+| Semantic form structure | Questions use `<fieldset>` + `<legend>` for screen reader grouping   |
+| Required fields         | `aria-required="true"` and HTML `required` on all radio inputs       |
+| Results Modal           | `role="dialog"`, `aria-modal="true"`, `aria-labelledby`              |
+| Modal focus management  | Auto-focuses close button on open via `useRef` + `useEffect`         |
+| Focus trap              | Custom `keydown` handler traps `Tab`/`Shift+Tab` within modal bounds |
+| Escape key              | Closes the modal (standard dialog pattern)                           |
+| Route changes           | `ScrollToTop` component resets scroll position on navigation         |
 
 **Focus Trap implementation note:** The focus trap in `ResultsModal.tsx` is implemented manually (not via a library). It queries all focusable elements within the modal container and wraps Tab/Shift+Tab at the boundaries. The listener is cleaned up via the `useEffect` return function when the modal unmounts.
 
@@ -225,9 +283,10 @@ This application was built with accessibility as a first-class concern, adhering
 
 ## 6. Assessment Scoring System
 
-Each question has three possible scores configured in the JSON: `disagree`, `neutral`, and `agree`. Most questions score `0 / 1 / 2` but some strategically weighted questions (e.g. *"I am an early-career academic"*) score `0 / 1 / 4` to give early-career status greater influence on the outcome.
+Each question has three possible scores configured in the JSON: `disagree`, `neutral`, and `agree`. Most questions score `0 / 1 / 2` but some strategically weighted questions (e.g. _"I am an early-career academic"_) score `0 / 1 / 4` to give early-career status greater influence on the outcome.
 
 On form submission:
+
 1. A `FormData` object is built from the submitted form.
 2. Scores are summed into a `totalScore`.
 3. The `outcomes` array for the current assessment is searched to find the band where `min_score ≤ totalScore ≤ max_score`.
@@ -240,7 +299,9 @@ On form submission:
 The **Download Results** button on `/assessment_results` uses `html2pdf.js` to generate a PDF from the live DOM:
 
 ```typescript
-const resultsSection = document.querySelector("#results-section") as HTMLElement;
+const resultsSection = document.querySelector(
+  "#results-section",
+) as HTMLElement;
 html2pdf().from(resultsSection).set(options).save();
 ```
 
@@ -264,7 +325,7 @@ npm run preview
 ```typescript
 // vite.config.ts
 export default defineConfig({
-  base: '/eauc_travel_better/',
+  base: "/eauc_travel_better/",
   plugins: [react(), tailwindcss()],
 });
 ```
@@ -282,6 +343,7 @@ If a new assessment needs to be added to the tool in the future:
 1. **Add the config entry** — Append a new object to the `data` array in `assessments_config.json` following the existing schema. Give it a unique `id` (e.g. `"career_context"`).
 
 2. **Add the initial state key** — In `App.tsx`, add the new key to `initialResults`:
+
    ```typescript
    const initialResults = {
      // ... existing keys
@@ -289,11 +351,12 @@ If a new assessment needs to be added to the tool in the future:
    };
    ```
 
-3. **Add the TypeScript type** — Extend the `Results` interface in `App.tsx`:
+3. **Add the TypeScript type** — Extend the `Results` interface in `src/types/index.ts`:
+
    ```typescript
    export interface Results {
      // ... existing keys
-     career_context: ResultCategory | Record<string, never>;
+     career_context: ResultCategory | {};
    }
    ```
 
@@ -301,7 +364,9 @@ If a new assessment needs to be added to the tool in the future:
    ```tsx
    <Route
      path="/career_context"
-     element={<Assessment results={results} onUpdateResults={handleUpdateResults} />}
+     element={
+       <Assessment results={results} onUpdateResults={handleUpdateResults} />
+     }
    />
    ```
 
@@ -309,4 +374,4 @@ No changes are needed to the `Assessment`, `Home`, or `Results` components — t
 
 ---
 
-*Last updated: April 2026. For questions, contact the STA development team.*
+_Last updated: April 2026. For questions, contact the STA development team._

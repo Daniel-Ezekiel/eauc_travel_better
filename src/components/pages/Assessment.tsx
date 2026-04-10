@@ -3,33 +3,13 @@ import { MainLayout } from "../layout/MainLayout";
 import AssessmentsConfig from "../../assets/assessments_config.json";
 import { useState } from "react";
 import { ResultsModal } from "../modal/ResultsModal";
-import type { Results, ResultCategory, UpdateResultsPayload } from "../../App";
-
-interface Questions {
-  id: string;
-  text: string;
-  scores: {
-    disagree: number;
-    neutral: number;
-    agree: number;
-  };
-}
-
-export interface Outcome {
-  min_score: number;
-  max_score: number;
-  tag: string;
-  at_a_glance: string;
-  in_detail: string;
-}
-
-interface AssessmentCategory {
-  id: string;
-  title: string;
-  description: string;
-  questions: Questions[];
-  outcomes: Outcome[];
-}
+import type {
+  AssessmentCategory,
+  Outcome,
+  Results,
+  ResultCategory,
+  UpdateResultsPayload,
+} from "../../types";
 
 export const Assessment = ({
   results,

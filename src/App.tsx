@@ -2,13 +2,14 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import { ScrollToTop } from "./components/helpers/ScrollToTop";
 import { Home } from "./components/pages/Home";
-import { Assessment, type Outcome } from "./components/pages/Assessment";
+import { Assessment } from "./components/pages/Assessment";
 import { useReducer } from "react";
 import {
   ResultsContext,
   ResultsDispatchContext,
 } from "./contexts/ResultsContext";
-import { Results } from "./components/pages/Results";
+import { AllResults } from "./components/pages/AllResults";
+import type { AssessmentPage, Results, UpdateResultsPayload } from "./types";
 
 const initialResults = {
   individual_context: {},
@@ -326,47 +327,6 @@ const initialResults = {
 //   },
 // };
 
-export interface AssessmentPage {
-  assessment_id: string;
-  assessment_results: Record<string, unknown>;
-}
-
-interface ResultResponse {
-  questionId: string;
-  questionText: string;
-  questionScore: number;
-}
-
-export interface ResultCategory {
-  assessment_title: string;
-  totalScore: number;
-  outcome: Outcome;
-  responses: ResultResponse[];
-}
-
-export interface Results {
-  individual_context: ResultCategory | {};
-  social_context_networking: ResultCategory | {};
-  social_context_learning: ResultCategory | {};
-  social_context_presenting: ResultCategory | {};
-  material_context: ResultCategory | {};
-}
-
-export interface AssessmentResults {
-  assessment_title: string;
-  responses: unknown;
-  totalScore: number;
-  outcome: Outcome;
-}
-
-export interface UpdateResultsPayload {
-  page: string;
-  title: string;
-  responses: unknown;
-  totalScore: number;
-  outcome: unknown;
-}
-
 const resultsReducer = (results: Results, page: AssessmentPage): Results => {
   return {
     ...results,
@@ -398,7 +358,7 @@ function App() {
             <Route path="/" element={<Home results={results} />} />
             <Route
               path="/assessment_results"
-              element={<Results results={results} />}
+              element={<AllResults results={results} />}
             />
             <Route
               path="/individual_context"

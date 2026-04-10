@@ -1,10 +1,6 @@
-import type { AssessmentResults } from "../App";
+import type { AssessmentResults } from "../types";
 
-export const ResultCard = ({
-  result,
-}: {
-  result: AssessmentResults;
-}) => {
+export const ResultCard = ({ result }: { result: AssessmentResults }) => {
   const outcome = result.outcome;
 
   return (
@@ -15,7 +11,9 @@ export const ResultCard = ({
           Your score: <span>{result.totalScore}</span>
         </p>
         <div className="grid gap-4">
-          <h3 className="font-medium">What a score between {outcome.tag} means:</h3>
+          <h3 className="font-medium">
+            What a score between {outcome.tag} means:
+          </h3>
           <p className="font-medium">{outcome.at_a_glance}</p>
           <p>{outcome.in_detail}</p>
         </div>

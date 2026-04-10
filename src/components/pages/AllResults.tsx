@@ -6,7 +6,7 @@ import { ResultCard } from "../ResultCard";
 import { FaArrowDownLong } from "react-icons/fa6";
 import { LuShare } from "react-icons/lu";
 
-export const Results = ({ results }: { results: object }) => {
+export const AllResults = ({ results }: { results: object }) => {
   const { results_page } = assessmentsData;
 
   const downloadResults = () => {
