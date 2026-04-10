@@ -3,7 +3,7 @@ import { MainLayout } from "../layout/MainLayout";
 import AssessmentsConfig from "../../assets/assessments_config.json";
 import { useState } from "react";
 import { ResultsModal } from "../modal/ResultsModal";
-import type { Results, UpdateResultsPayload } from "../../App";
+import type { Results, ResultCategory, UpdateResultsPayload } from "../../App";
 
 interface Questions {
   id: string;
@@ -126,7 +126,7 @@ export const Assessment = ({
           >
             {assessmentCategory.questions.map((question) => {
               const currPageResponses = (currPageResults &&
-                currPageResults.responses) as unknown as {
+                (currPageResults as ResultCategory).responses) as unknown as {
                 questionId: string;
                 questionScore: number;
               }[];
@@ -213,7 +213,7 @@ export const Assessment = ({
                 </Link>
               )}
 
-              {isAllResultsAvailable && (
+              {isAllResultsAvailable && nextAssessmentId === undefined && (
                 <Link
                   to={`/assessment_results`}
                   className="cursor-pointer py-2 px-5 bg-midnight text-sandstone-tint rounded-r-full"
@@ -230,6 +230,7 @@ export const Assessment = ({
             tag={(outcome as Outcome).tag}
             summary={(outcome as Outcome).at_a_glance}
             details={(outcome as Outcome).in_detail}
+            nextAssessmentId={nextAssessmentId}
             handleClick={() => {
               setToggleModal(false);
               document

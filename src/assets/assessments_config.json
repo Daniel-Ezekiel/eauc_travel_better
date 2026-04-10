@@ -3,6 +3,12 @@
     "title": "Air Travel Justification Tool",
     "description": "This reflective tool is designed to help you evaluate the necessity of flying to academic conferences and meetings. Rather than asking you to completely eliminate air travel, it guides you through a series of short assessments to weigh the professional benefits of your trip against its environmental impact. Use this tool to make conscious, sustainable travel choices that support global sustainability goals."
   },
+  "results_page": {
+    "title": "Interpret your scores",
+    "share_url": "https://eauc.org.uk",
+    "download_button_text": "Download Results",
+    "share_button_text": "Share your results"
+  },
   "data": [
     {
       "id": "individual_context",

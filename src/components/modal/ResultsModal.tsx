@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router";
 import { FaTimesCircle } from "react-icons/fa";
 
 export const ResultsModal = ({
@@ -6,12 +7,14 @@ export const ResultsModal = ({
   tag,
   summary,
   details,
+  nextAssessmentId,
   handleClick,
 }: {
   score: number;
   tag: string;
   summary: string;
   details: string;
+  nextAssessmentId?: string;
   handleClick: () => void;
 }) => {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
@@ -87,15 +90,30 @@ export const ResultsModal = ({
           <p>{details}</p>
         </div>
       </div>
-      <button
-        ref={closeBtnRef}
-        type="button"
-        className="btn_modal-close absolute flex gap-2 items-center top-10 right-10 z-10 cursor-pointer font-medium text-sandstone-tint"
-        onClick={handleClick}
-        aria-label="Close Results Modal"
-      >
-        <FaTimesCircle /> Close Results
-      </button>
+      {nextAssessmentId && (
+        <Link
+          to={`/${nextAssessmentId}`}
+          type="button"
+          className="btn_modal-close absolute max-w-56 flex gap-4 items-start top-10 right-10 z-10 cursor-pointer font-medium text-left text-sandstone-tint"
+          onClick={handleClick}
+          aria-label="Close Results Modal"
+        >
+          <FaTimesCircle size={48} className="h-fit pt-2" /> Close results and
+          go to next assessment
+        </Link>
+      )}
+      {!nextAssessmentId && (
+        <Link
+          to="/assessment_results"
+          type="button"
+          className="btn_modal-close absolute max-w-56 flex gap-4 items-start top-10 right-10 z-10 cursor-pointer font-medium text-left text-sandstone-tint"
+          onClick={handleClick}
+          aria-label="Close Results Modal"
+        >
+          <FaTimesCircle size={48} className="h-fit pt-2" /> Close results and
+          view all assessment results
+        </Link>
+      )}
     </div>
   );
 };
