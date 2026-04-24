@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import Logo from "../../assets/logo.png";
 
 export const Footer = () => {
   return (
@@ -6,7 +7,7 @@ export const Footer = () => {
       <p className="flex justify-center items-center gap-2">
         Powered by
         <Link to="https://eauc.org.uk" target="_blank">
-          <img src="/logo.png" alt="EAUC Logo" className="w-38" />
+          <img src={Logo} alt="EAUC Logo" className="w-38" />
         </Link>
       </p>
     </footer>

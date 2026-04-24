@@ -1,5 +1,6 @@
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link, useLocation } from "react-router";
+import Logo from "../../assets/logo.png";
 
 export const Header = () => {
   const { pathname } = useLocation();
@@ -10,7 +11,7 @@ export const Header = () => {
     <header>
       <nav className="flex justify-between">
         <Link to="/" className="grid place-items-center max-w-fit relative">
-          <img src="/logo.png" alt="EAUC Logo" className="w-38" />
+          <img src={Logo} alt="EAUC Logo" className="w-38" />
         </Link>
 
         {!isHome && (
