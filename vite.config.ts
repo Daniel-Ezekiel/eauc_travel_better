@@ -5,5 +5,5 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/eauc_travel_better/",
+  base: process.env.VERCEL ? "/" : "/eauc_travel_better/",
 });
