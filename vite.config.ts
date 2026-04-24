@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  // base: "/eauc_travel_better/",
   plugins: [react(), tailwindcss()],
+  base: "/eauc_travel_better/",
 });
