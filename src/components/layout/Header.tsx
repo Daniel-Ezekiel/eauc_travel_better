@@ -1,6 +1,6 @@
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link, useLocation } from "react-router";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/img/logo.png";
 
 export const Header = () => {
   const { pathname } = useLocation();
