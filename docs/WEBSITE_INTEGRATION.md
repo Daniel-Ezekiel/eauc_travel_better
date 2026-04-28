@@ -12,7 +12,7 @@ Switch your page editor to **HTML / Code / Text** mode (not the Visual editor), 
 
 ```html
 <iframe
-  src="https://eauc-travel-better.vercel.app"
+  src="https://eauc-travel-better.vercel.app](https://eaucsustainability.github.io/eauc_travel_better/"
   width="100%"
   height="900px"
   style="border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
